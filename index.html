@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation</title>
+    <style>
+        #Anim{
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin: 50px auto;
+            background-color: #050210;
+        }
+        #Anim::before{
+            position: absolute;
+            content: '';
+            width: 300px;
+            height: 300px;
+            margin: 50px 150px;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            border-radius: 100%;
+            animation: animation 1s infinite linear;
+        }
+        #Anim::after{
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 10px;
+            margin: 195px 295px;
+            background-color:  #1b123b;
+            border-radius: 100%;
+            animation: after 1.5s infinite linear;
+        }
+        #Blur{
+            position: absolute;
+            content: '';
+            width: 300px;
+            height: 300px;
+            margin: 50px 150px;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            border-radius: 100%;
+            filter: blur(50px);
+            animation: animation 1s infinite linear;
+        }
+        #Puls{
+            position: absolute;
+            content: '';
+            width: 250px;
+            height: 250px;
+            margin: 75px 175px;
+            background-color: #050210;
+            border-radius: 100%;
+        }
+
+        @keyframes animation {
+            0%{
+                transform: rotate(0deg);
+            }
+        
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes after{
+            0%{
+                transform: scale(2,2);
+            }
+            60%{
+                transform: scale(24,24);
+            }
+            100%{
+                transform: scale(24,24);
+                background-color: transparent;
+            }
+         }      
+    </style>
+</head>
+<body>
+    <div id="Anim">
+        <div id="Blur"></div>
+        <div id="Puls"></div>
+    </div>
+</body>
+</html>
